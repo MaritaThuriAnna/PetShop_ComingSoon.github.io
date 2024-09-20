@@ -10,13 +10,14 @@ body {
     height: 100vh;
     text-align: center;
     background-image: url('../header-background2.jpg');
-    background-size: cover; 
+    background-size: cover;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
     align-items: center;
     border-radius: 20px;
     width: 75%;
@@ -26,16 +27,28 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-img{
+img {
     width: 100px;
     height: 100px;
+    grid-row: 1;
 }
 
-.soon, .t, .text{
+.soon {
     margin-bottom: 20px;
+    grid-row: 2;
 }
 
-.text h2{
+.date {
+    margin-bottom: 20px;
+    grid-row: 3; 
+}
+
+.text {
+    grid-row: 4;
+    text-align: center;
+}
+
+.text h2 {
     margin-bottom: 20px;
 }
 
@@ -50,22 +63,20 @@ a {
     transition: background-color 0.3s ease;
 }
 
-
 a:hover {
     background-color: #b45b4a;
 }
 
 .signUp {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
     justify-content: center;
     align-items: center;
-    justify-content: center;
 }
-
 
 .signUp input {
     padding: 7px;
-    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 1em;
@@ -73,14 +84,18 @@ a:hover {
 
 @media screen and (max-width: 600px) {
 
-    .container{
+    .container {
         width: 75%;
-        height:fit-content;
+        height: fit-content;
         padding: 20px;
     }
 
-    .t{
+    .t {
         margin-bottom: 5em;
+    }
+
+    .signUp {
+        grid-template-columns: 1fr;
     }
 
     .signUp input {
